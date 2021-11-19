@@ -1,0 +1,8 @@
+.item:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.author {
+    display: inline-block;
+    margin-bottom: 10px;
+}
