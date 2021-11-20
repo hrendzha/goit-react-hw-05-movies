@@ -8,7 +8,7 @@ import { getMoviesByKeywords } from '../../services/moviesApi';
 import s from './MoviesPage.module.css';
 
 function MoviesPage() {
-    const [input, setInput] = useState('batman');
+    const [input, setInput] = useState('');
     const [movies, setMovies] = useState([]);
     const location = useLocation();
     const history = useHistory();
