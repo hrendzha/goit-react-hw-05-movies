@@ -6,8 +6,6 @@ import { getTrendingMovies } from '../../services/moviesApi';
 import s from './HomePage.module.css';
 
 function HomePage() {
-    console.log('render HomePage ' + Date.now());
-
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -21,7 +19,9 @@ function HomePage() {
             <Container>
                 <h2 className={s.title}>Trending today</h2>
 
-                {Boolean(movies.length) && <MoviesList movies={movies} />}
+                {Boolean(movies.length) && (
+                    <MoviesList movies={movies} goBackLabel="Go back to home" />
+                )}
             </Container>
         </Section>
     );

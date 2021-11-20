@@ -5,7 +5,7 @@ import s from './MovieCard.module.css';
 
 MovieCard.propTypes = {
     movie: PropTypes.object.isRequired,
-    from: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+    from: PropTypes.object.isRequired,
 };
 
 function MovieCard({ movie, from }) {
@@ -49,9 +49,7 @@ function MovieCard({ movie, from }) {
                         <Link
                             to={{
                                 pathname: `${url}/cast`,
-                                state: {
-                                    from,
-                                },
+                                state: { from },
                             }}
                         >
                             Cast
@@ -61,9 +59,7 @@ function MovieCard({ movie, from }) {
                         <Link
                             to={{
                                 pathname: `${url}/reviews`,
-                                state: {
-                                    from,
-                                },
+                                state: { from },
                             }}
                         >
                             Reviews

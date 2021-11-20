@@ -9,9 +9,10 @@ MoviesList.propTypes = {
             title: PropTypes.string.isRequired,
         }).isRequired,
     ).isRequired,
+    goBackLabel: PropTypes.string,
 };
 
-function MoviesList({ movies }) {
+function MoviesList({ movies, goBackLabel }) {
     const location = useLocation();
 
     return (
@@ -22,7 +23,10 @@ function MoviesList({ movies }) {
                         to={{
                             pathname: `movies/${id}`,
                             state: {
-                                from: location,
+                                from: {
+                                    location,
+                                    label: goBackLabel,
+                                },
                             },
                         }}
                     >

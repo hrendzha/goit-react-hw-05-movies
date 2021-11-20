@@ -10,7 +10,7 @@ function getTrendingMovies() {
 }
 
 function getMoviesByKeywords(keywords) {
-    return axios(`/search/movie/?api_key=${AUTH_TOKEN}&query=${keywords}`).then(
+    return axios(`/search/movie?api_key=${AUTH_TOKEN}&query=${keywords}`).then(
         ({ data }) => data.results,
     );
 }

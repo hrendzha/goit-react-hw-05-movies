@@ -4,8 +4,6 @@ import { getMovieCast } from '../../services/moviesApi';
 import s from './MovieCast.module.css';
 
 function MovieCast() {
-    console.log('render MovieCast ' + Date.now());
-
     const [cast, setCast] = useState([]);
     const { movieId } = useParams();
 

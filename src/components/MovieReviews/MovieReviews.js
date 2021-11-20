@@ -4,8 +4,6 @@ import { getMovieReviews } from '../../services/moviesApi';
 import s from './MovieReviews.module.css';
 
 function MovieReviews() {
-    console.log('render MovieReviews component ' + Date.now());
-
     const [reviews, setReviews] = useState([]);
     const { movieId } = useParams();
 

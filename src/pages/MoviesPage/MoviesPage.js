@@ -8,8 +8,6 @@ import { getMoviesByKeywords } from '../../services/moviesApi';
 import s from './MoviesPage.module.css';
 
 function MoviesPage() {
-    console.log('render MoviesPage ' + Date.now());
-
     const [input, setInput] = useState('batman');
     const [movies, setMovies] = useState([]);
     const location = useLocation();
@@ -52,7 +50,12 @@ function MoviesPage() {
                     <button type="submit">Search</button>
                 </form>
 
-                {Boolean(movies.length) && <MoviesList movies={movies} />}
+                {Boolean(movies.length) && (
+                    <MoviesList
+                        movies={movies}
+                        goBackLabel="Go back to movies search"
+                    />
+                )}
             </Container>
         </Section>
     );

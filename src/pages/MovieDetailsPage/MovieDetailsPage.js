@@ -22,8 +22,6 @@ const MovieReviews = lazy(() =>
 );
 
 function MovieDetailsPage() {
-    console.log('render MovieDetailsPage ' + Date.now());
-
     const [movie, setMovie] = useState(null);
     const { movieId } = useParams();
     const { path } = useRouteMatch();
@@ -35,18 +33,19 @@ function MovieDetailsPage() {
             .catch(e => console.log(e.message));
     }, [movieId]);
 
-    const goBackUrl = state ? state.from : '/';
-
     return (
         <Section>
             <Container>
                 {movie && (
                     <>
-                        <Link to={goBackUrl} className={s.goBackLink}>
-                            Go back
+                        <Link
+                            to={state?.from?.location || { pathname: '/' }}
+                            className={s.goBackLink}
+                        >
+                            {state?.from?.label || 'Go back'}
                         </Link>
 
-                        <MovieCard movie={movie} from={goBackUrl} />
+                        <MovieCard movie={movie} from={state?.from} />
                     </>
                 )}
 
